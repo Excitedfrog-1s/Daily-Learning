@@ -1,0 +1,8 @@
+matplotlib==3.1.1
+numpy==1.16.5
+hyperas==0.4.1
+h5py==2.9.0
+pandas==0.25.1
+Keras==2.2.4
+configobj==5.0.6
+targets==0.1.1
