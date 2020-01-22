@@ -17,14 +17,10 @@ Contains all ELEC5616 lab exercises and Skynet project files.
 Contains all COMP5318 assignment's answers, a part of lab files and other machine learning relative files.
 
 
-## Django: 
-Contains files about my Django project. (Still in learning progress)
-
-
 ## Capstone: 
 Contains files about the Capstone project. These codes comes from here: https://github.com/DistriNet/DLWF and will be used as the basic structure. This already approved by the project owner. The details are in Capstone/README.md.
 
-## Others: 
+## Go: 
 Contains Golang files.
 
 
