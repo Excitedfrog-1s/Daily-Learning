@@ -120,11 +120,93 @@ def quickSortDescending(array, low, high):
     return array
 
 
+def createSmallHeap(array, root, size):
+    '''
+    堆排序，保证以root为根的堆是小根堆，用于降序排序
+    root: 起始点
+    size：堆大小
+    '''
+    left_child = root * 2 + 1
+    right_child = root * 2 + 2
+    new_root = root
+    if left_child < size and array[new_root] > array[left_child]:
+        new_root = left_child
+    if right_child < size and array[new_root] > array[right_child]:
+        new_root = right_child
+    if new_root != root:
+        array[new_root], array[root] = array[root], array[new_root]
+        createSmallHeap(array, new_root, size)
+    return array
+
+
+def createBigHeap(array, root, size):
+    '''
+    堆排序，保证以root为根的堆是大根堆，用于升序排序
+    root: 起始点
+    size：堆大小
+    '''
+    left_child = root * 2 + 1
+    right_child = root * 2 + 2
+    new_root = root
+    if left_child < size and array[new_root] < array[left_child]:
+        new_root = left_child
+    if right_child < size and array[new_root] < array[right_child]:
+        new_root = right_child
+    if new_root != root:
+        array[new_root], array[root] = array[root], array[new_root]
+        createBigHeap(array, new_root, size)
+    return array
+
+
+def buildSmallHeap(array):
+    '''
+    建小根堆
+    '''
+    size = len(array)
+    for i in range((size - 2) // 2, -1, -1):
+        createSmallHeap(array, i, size)
+    return array
+
+
+def buildBigHeap(array):
+    '''
+    建大根堆
+    '''
+    size = len(array)
+    for i in range((size - 2) // 2, -1, -1):
+        createBigHeap(array, i, size)
+    return array
+
+
+def heapSortAscending(array):
+    '''
+    堆排序升序
+    '''
+    array = buildBigHeap(array)
+    for i in range(len(array) - 1, -1, -1):
+        array[0], array[i] = array[i], array[0]
+        createBigHeap(array, 0, i)
+    print(array)
+
+
+def heapSortDescending(array):
+    '''
+    堆排序降序
+    '''
+    array = buildSmallHeap(array)
+    for i in range(len(array) - 1, -1, -1):
+        array[0], array[i] = array[i], array[0]
+        createSmallHeap(array, 0, i)
+    print(array)
+
+
 if __name__ == '__main__':
-    array = [4, 2, 3, 6, 5, 1, 9, 7, 0, 8]
-    # straightInsertionSortAscending()
-    # straightInsertionSortDescending()
-    # bubbleSortAscending()
-    # bubbleSortDescending()
+    array = [4, 2, 5, 6, 3, 1, 9, 7, 0, 8]
+    straightInsertionSortAscending(array)
+    straightInsertionSortDescending(array)
+    bubbleSortAscending(array)
+    bubbleSortDescending(array)
     print(quickSortAscending(array, 0, len(array) - 1))
     print(quickSortDescending(array, 0, len(array) - 1))
+    heapSortAscending(array)
+    heapSortDescending(array)
