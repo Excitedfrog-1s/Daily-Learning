@@ -200,6 +200,56 @@ def heapSortDescending(array):
     print(array)
 
 
+def twoWayMerge(array, start, middle, end):
+    '''
+    将两个有序表归并为一个升序有序表
+    a: 标识第一个序列的位置
+    b: 标识第二个序列的位置
+    c: 新序列的位置
+    '''
+    first_array_end = middle - start + 1
+    second_array_end = end - middle
+    first_array = [None] * first_array_end
+    second_array = [None] * second_array_end
+    a, b, c = 0, 0, start
+    for i in range(0, first_array_end):
+        first_array[i] = array[start + i]
+    for j in range(0, second_array_end):
+        second_array[j] = array[middle + j + 1]
+    while a != first_array_end and b != second_array_end:
+        # 降序只需将下行改为 >=
+        if first_array[a] <= second_array[b]:
+            array[c] = first_array[a]
+            c += 1
+            a += 1
+        else:
+            array[c] = second_array[b]
+            b += 1
+            c += 1
+    while a < first_array_end:
+        array[c] = first_array[a]
+        a += 1
+        c += 1
+    while b < second_array_end:
+        array[c] = second_array[b]
+        b += 1
+        c += 1
+
+    return array
+
+
+def twoWayMergeSort(array, start, end):
+    '''
+    二路归并排序
+    '''
+    if start < end:
+        middle = (start + end) // 2
+        twoWayMergeSort(array, start, middle)
+        twoWayMergeSort(array, middle + 1, end)
+        twoWayMerge(array, start, middle, end)
+        return array
+
+
 if __name__ == '__main__':
     array = [4, 2, 5, 6, 3, 1, 9, 7, 0, 8]
     straightInsertionSortAscending(array)
@@ -210,3 +260,4 @@ if __name__ == '__main__':
     print(quickSortDescending(array, 0, len(array) - 1))
     heapSortAscending(array)
     heapSortDescending(array)
+    print(twoWayMergeSort(array, 0, len(array) - 1))
