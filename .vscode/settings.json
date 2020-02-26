@@ -10,7 +10,4 @@
         "--max-line-length=1000",
         "--extend-ignore=E722"
     ],
-    "python.linting.pylintArgs": [
-        "--disable=bare-except"
-    ]
 }
