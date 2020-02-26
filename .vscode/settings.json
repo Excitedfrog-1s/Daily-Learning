@@ -1,6 +1,16 @@
 {
     "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
     "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": ["--style","{based_on_style: chromium, indent_width: 4}"],
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{based_on_style: chromium, indent_width: 4}"
+    ],
     "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=1000",
+        "--extend-ignore=E722"
+    ],
+    "python.linting.pylintArgs": [
+        "--disable=bare-except"
+    ]
 }
