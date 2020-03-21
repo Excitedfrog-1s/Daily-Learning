@@ -1,16 +1,15 @@
-while True:
-    try:
-        empty_bottle_num = int(input())
-        if empty_bottle_num:
-            drink_bottle_num = 0
-            while empty_bottle_num >= 3:
-                temp = empty_bottle_num // 3
-                drink_bottle_num += temp
-                empty_bottle_num = empty_bottle_num % 3 + temp
-            if empty_bottle_num == 2:
-                drink_bottle_num += 1
-            print(drink_bottle_num)
-        else:
-            break
-    except:
-        break
+a = [1, 2, 3, 4]
+b = [5, 6, 7, 8]
+
+
+def a1():
+    print(a)
+
+
+def mod():
+    a = b
+    return a
+
+
+mod()
+a1()

@@ -5,34 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "CodeLens (Launch) - HelloWorld",
-            "request": "launch",
-            "mainClass": "HelloWorld",
-            "projectName": "Daily-Learning_784b7af9"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - HelloWorld",
-            "request": "launch",
-            "mainClass": "Java.HelloWorld",
-            "projectName": "Daily-Learning_784b7af9"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - HelloWord",
-            "request": "launch",
-            "mainClass": "Java.HelloWord",
-            "projectName": "Daily-Learning_784b7af9"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Main",
-            "request": "launch",
-            "mainClass": "app.Main",
-            "projectName": "Solutions"
-        },
-        {
             "name": "Go: Launch file",
             "type": "go",
             "request": "launch",
