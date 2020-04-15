@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
+    "python.pythonPath": "C:\\Program Files\\Python3\\python.exe",
     "python.formatting.provider": "yapf",
     "python.formatting.yapfArgs": [
         "--style",
